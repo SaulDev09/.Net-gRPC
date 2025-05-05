@@ -1,6 +1,6 @@
 # .Net-Microservices-gRPC
 
-## 👨‍💻 Structure: Version 1 - feature/01-SolutionArchitecture
+## 👨‍💻 Structure: Version 2 - feature/02-Domain
 
 ```
 Solution
@@ -11,6 +11,23 @@ Solution
 |
 |-- Domain/
 |   |-- Domain
+|       |-- Commons/
+|		|	|-- BaseAuditableEntity.cs
+|		|	|-- BaseEntity.cs
+|		|	|-- BaseEvent.cs
+|		|
+|       |-- Entities/
+|		|	|-- Order.cs
+|		|
+|       |-- Enums/
+|		|	|-- OrderSide.cs
+|		|	|-- OrderType.cs
+|		|
+|       |-- Events/
+|			|-- OrderCanceledEvent.cs
+|			|-- OrderCreatedEvent.cs
+|			|-- OrderUpdatedEvent.cs
+|
 |
 |-- Infrastructure/
 |   |-- Infrastructure

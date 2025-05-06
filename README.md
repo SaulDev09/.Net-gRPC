@@ -1,4 +1,4 @@
-# .Net-Microservices-gRPC
+# .Net-gRPC
 
 ## 👨‍💻 Structure: Version 2 - feature/02-Domain
 
@@ -11,23 +11,22 @@ Solution
 |
 |-- Domain/
 |   |-- Domain
-|       |-- Commons/
-|		|	|-- BaseAuditableEntity.cs
-|		|	|-- BaseEntity.cs
-|		|	|-- BaseEvent.cs
-|		|
-|       |-- Entities/
-|		|	|-- Order.cs
-|		|
-|       |-- Enums/
-|		|	|-- OrderSide.cs
-|		|	|-- OrderType.cs
-|		|
-|       |-- Events/
-|			|-- OrderCanceledEvent.cs
-|			|-- OrderCreatedEvent.cs
-|			|-- OrderUpdatedEvent.cs
-|
+|       |-- Commons/ ✅
+|	|   |-- BaseAuditableEntity.cs ✅
+|	|   |-- BaseEntity.cs ✅
+|	|   |-- BaseEvent.cs ✅
+|	|
+|       |-- Entities/ ✅
+|	|   |-- Order.cs ✅
+|	|
+|       |-- Enums/ ✅
+|	|   |-- OrderSide.cs ✅
+|	|   |-- OrderType.cs ✅
+|	|
+|       |-- Events/ ✅
+|	    |-- OrderCanceledEvent.cs ✅
+|	    |-- OrderCreatedEvent.cs ✅
+|	    |-- OrderUpdatedEvent.cs ✅
 |
 |-- Infrastructure/
 |   |-- Infrastructure

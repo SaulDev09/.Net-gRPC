@@ -1,3 +1,4 @@
+using Sc.Trade.Application.UseCases;
 using Sc.Trade.Persistence;
 using Sc.Trade.Services.gRPC.Services;
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddGrpc();
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 

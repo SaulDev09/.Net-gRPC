@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sc.Trade.Application.UseCases\Sc.Trade.Application.UseCases.csproj" />
     <ProjectReference Include="..\Sc.Trade.Persistence\Sc.Trade.Persistence.csproj" />
   </ItemGroup>
 

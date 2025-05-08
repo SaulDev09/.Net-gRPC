@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sc.Trade.Application.Interfaces.Persistence;
 using Sc.Trade.Persistence.Contexts;
 using Sc.Trade.Persistence.Interceptors;
 
@@ -15,6 +16,7 @@ namespace Sc.Trade.Persistence
                 options.UseSqlServer(configuration.GetConnectionString("TradingConnection"),
                 builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
             return services;
         }
     }

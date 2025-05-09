@@ -1,4 +1,4 @@
-## 👨‍💻 Structure: Version 5 - feature/05-Presentation
+## 👨‍💻 Structure: Version 6 - feature/06-Presentation-with-interceptor
 
 ```
 Solution
@@ -65,7 +65,7 @@ Solution
 |	|   |--📄 OrderConfiguration.cs
 |	|
 |       |-- 📁 Contexts/
-|	|   |--📄 ApplicationDbContext.cs 📝
+|	|   |--📄 ApplicationDbContext.cs
 |	|
 |       |-- 📁 Interceptors/
 |	|   |--📄 AuditableEntitySaveChangesInterceptor.cs
@@ -78,23 +78,26 @@ Solution
 |       |-- 📁 Seeders/
 |	|   |--📄 OrderSeeder.cs
 |	|
-|       |--📄 DependencyInjection.cs 📝
+|       |--📄 DependencyInjection.cs
 |
 |-- 📁 Presentation/
     |-- 🌐 Services.gRPC
-	|-- 📁 Commons/ ✅
-    	|   |-- 📁 Mappings/ ✅
-	|	|--📄 MappingsProfile.cs ✅
+	|-- 📁 Commons/
+    	|   |-- 📁 Mappings/
+	|	|--📄 MappingsProfile.cs
 	|
-       	|-- 📁 Protos/ ✅
-    	|   |-- 📄 Order.proto ✅
+    	|   |-- 📁 GlobalException/ ✅
+	|	|--📄 GlobalExceptionHandler.cs ✅
 	|
-	|-- 📁 Services/ ✅
-    	|   |--📄 OrderService.cs ✅
+       	|-- 📁 Protos/
+    	|   |-- 📄 Order.proto
+	|
+	|-- 📁 Services/
+    	|   |--📄 OrderService.cs
 	|
         |--📄 appsettings.json
-        |--📄 Program.cs 📝
-       	|--📄 DependencyInjection.cs ✅
+        |--📄 Program.cs
+       	|--📄 DependencyInjection.cs 📝
     
 ```
 
@@ -118,7 +121,7 @@ Solution
 
 	 📦 Dependencies:
 	    AutoMapper (13.0.1)
-       	    MediatR (12.5.0)
+	    MediatR (12.5.0)
  
 📁 Domain  
 ### 🛠️ Domain  
@@ -145,12 +148,12 @@ Solution
 	ASP.NET Core gRPC Service .NET 8.0
  
  	🔧 Projects:
-		Application.UseCases.csproj
+	    Application.UseCases.csproj
 	    Persistence.csproj
 
 	 📦 Dependencies:
 	    Microsoft.EntityFrameworkCore.Design (8.0.15)
-	    Grpc.AspNetCore.Server.Reflection (2.71.0) ✅
+	    Grpc.AspNetCore.Server.Reflection (2.71.0)
 
 
 **Entity Framework Commands**
@@ -167,3 +170,92 @@ dotnet ef migrations add AlterOrderScheme -s Sc.Trade.Services.gRPC -p Sc.Trade.
 dotnet ef database update -s Sc.Trade.Services.gRPC -p Sc.Trade.Persistence
 ```
 
+## 🧩 gRPC Services Overview
+
+### 🚀 Service: `OrderService`
+
+**RPC Methods:**
+
+- `CreateOrder (CreateOrderRequest) returns (CreateOrderResponse)`
+- `UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse)`
+- `CancelOrder (CancelOrderRequest) returns (CancelOrderResponse)`
+- `GetOrder (GetOrderRequest) returns (GetOrderResponse)`
+- `GetAllOrder (GetAllOrderRequest) returns (GetAllOrderResponse)`
+
+### 📝 Example Request (Postman gRPC Tab)
+
+Service URL:
+grpc://localhost:5210
+
+**1. GetAllOrder**  
+Service: `Order`  
+Method: `GetAllOrder`
+
+Request Message:
+json
+```
+{}
+```
+
+**2. GetOrder**  
+Service: `Order`  
+Method: `GetOrder`
+
+Request Message:
+json
+```
+{
+    "Id": 5
+}
+```
+
+**3. CreateOrder**  
+Service: `Order`  
+Method: `CreateOrder`
+
+Request Message:
+json
+```
+{
+    "Id": 5,
+    "Symbol": "MSFT",
+    "Side": "BUY",
+    "TransactTime": {
+        "seconds": "1746810670",
+        "nanos": 0
+    },
+    "Quanty": 7,
+    "Type": "LIMIT",
+    "Price": 777,
+    "Currency": "USD",
+    "Text": "TS01"
+}
+```
+
+**4. UpdateOrder**  
+Service: `Order`  
+Method: `UpdateOrder`
+
+Request Message:
+json
+```
+{
+    "Id": 5,
+    "Quanty": 8,
+    "Type": "LIMIT",
+    "Price": 555,
+    "Text": "TS01-2" 
+}
+```
+
+**4. CancelOrder**  
+Service: `Order`  
+Method: `CancelOrder`
+
+Request Message:
+json
+```
+{
+    "Id": 5
+}
+```

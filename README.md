@@ -1,43 +1,43 @@
-## 👨‍💻 Structure: Version 4 - feature/04-Application
+## 👨‍💻 Structure: Version 5 - feature/05-Presentation
 
 ```
 Solution
 |
 |-- 📁 Application/
 |   |-- 🛠️ Interfaces
-|   |   |-- 📁 Persistence/ ✅
-|   |       |-- 📄 IApplicationDbContext.cs ✅
+|   |   |-- 📁 Persistence/
+|   |       |-- 📄 IApplicationDbContext.cs
 |   |
 |   |-- 🛠️ UseCases
-|       |-- 📁 Commons/ ✅
-|	|   |-- 📁 Mappings/ ✅
-|	|   	|--📄 MappingsProfile.cs ✅
+|       |-- 📁 Commons/
+|	|   |-- 📁 Mappings/
+|	|   	|--📄 MappingsProfile.cs
 |	|
-|       |-- 📁 Features/ ✅
-|	   |-- 📁 Orders/ ✅
-|	   	|-- 📁 Commands/ ✅
-|	   	|   |-- 📁 CancelOrder/ ✅
-|	   	|   |	|--📄 CancelOrderCommand.cs ✅
-|	   	|   |   |--📄 CancelOrderHandler.cs ✅
+|       |-- 📁 Features/
+|	   |-- 📁 Orders/
+|	   	|-- 📁 Commands/
+|	   	|   |-- 📁 CancelOrder/
+|	   	|   |	|--📄 CancelOrderCommand.cs
+|	   	|   |   |--📄 CancelOrderHandler.cs
 |	   	|   |
-|	   	|   |-- 📁 CreateOrder/ ✅
-|	   	|   |	|--📄 CreateOrderCommand.cs ✅
-|	   	|   |   |--📄 CreateOrderHandler.cs ✅
+|	   	|   |-- 📁 CreateOrder/
+|	   	|   |	|--📄 CreateOrderCommand.cs
+|	   	|   |   |--📄 CreateOrderHandler.cs
 |	   	|   |
-|	   	|   |-- 📁 UpdateOrder/ ✅
-|	   	|	|--📄 UpdateOrderCommand.cs ✅
-|	   	|       |--📄 UpdateOrderHandler.cs ✅
+|	   	|   |-- 📁 UpdateOrder/
+|	   	|	|--📄 UpdateOrderCommand.cs
+|	   	|       |--📄 UpdateOrderHandler.cs
 |	   	|
-|	   	|-- 📁 Queries/ ✅
-|	   	    |-- 📁 GetAllOrder/ ✅
-|	   	    |	|--📄 GetAllOrderHandler.cs ✅
-|	   	    |   |--📄 GetAllOrderQuery.cs ✅
-|	   	    |   |--📄 GetAllOrderResponseDto.cs ✅
+|	   	|-- 📁 Queries/
+|	   	    |-- 📁 GetAllOrder/
+|	   	    |	|--📄 GetAllOrderHandler.cs
+|	   	    |   |--📄 GetAllOrderQuery.cs
+|	   	    |   |--📄 GetAllOrderResponseDto.cs
 |	   	    |
-|	   	    |-- 📁 GetOrder/ ✅
-|	   	    	|--📄 GetOrderHandler.cs ✅
-|	   	        |--📄 GetOrderQuery.cs ✅
-|	   	        |--📄 GetOrderResponseDto.cs ✅
+|	   	    |-- 📁 GetOrder/
+|	   	    	|--📄 GetOrderHandler.cs
+|	   	        |--📄 GetOrderQuery.cs
+|	   	        |--📄 GetOrderResponseDto.cs
 |
 |-- 📁 Domain/
 |   |-- 🛠️ Domain
@@ -82,9 +82,19 @@ Solution
 |
 |-- 📁 Presentation/
     |-- 🌐 Services.gRPC
+	|-- 📁 Commons/ ✅
+    	|   |-- 📁 Mappings/ ✅
+	|	|--📄 MappingsProfile.cs ✅
+	|
+       	|-- 📁 Protos/ ✅
+    	|   |-- 📄 Order.proto ✅
+	|
+	|-- 📁 Services/ ✅
+    	|   |--📄 OrderService.cs ✅
+	|
         |--📄 appsettings.json
         |--📄 Program.cs 📝
-
+       	|--📄 DependencyInjection.cs ✅
     
 ```
 
@@ -95,20 +105,20 @@ Solution
 	Class Library, .NET 8.0  
  
  	🔧 Projects:
-	    Domain.csproj ✅
+	    Domain.csproj
 
 	 📦 Dependencies:
-	    Microsoft.EntityFrameworkCore (8.0.15) ✅
+	    Microsoft.EntityFrameworkCore (8.0.15)
      
 ### 🛠️ UseCases  
 	Class Library, .NET 8.0  
 
  	🔧 Projects:
-	    Application.Interfaces.csproj ✅
+	    Application.Interfaces.csproj
 
 	 📦 Dependencies:
-	    AutoMapper (13.0.1) ✅
-       	    MediatR (12.5.0) ✅
+	    AutoMapper (13.0.1)
+       	    MediatR (12.5.0)
  
 📁 Domain  
 ### 🛠️ Domain  
@@ -122,7 +132,7 @@ Solution
 	Class Library, .NET 8.0  
  
  	🔧 Projects:
-  	    Application.Interfaces.csproj ✅
+  	    Application.Interfaces.csproj
 	    Domain.csproj
 
 	 📦 Dependencies:
@@ -135,11 +145,12 @@ Solution
 	ASP.NET Core gRPC Service .NET 8.0
  
  	🔧 Projects:
-     	    Application.UseCases.csproj ✅  
+		Application.UseCases.csproj
 	    Persistence.csproj
 
 	 📦 Dependencies:
 	    Microsoft.EntityFrameworkCore.Design (8.0.15)
+	    Grpc.AspNetCore.Server.Reflection (2.71.0) ✅
 
 
 **Entity Framework Commands**

@@ -1,5 +1,6 @@
 ﻿using Grpc.Core;
 using Grpc.Core.Interceptors;
+using Sc.Trade.Application.UseCases.Commons.Exceptions;
 using Sc.Trade.Services.gRPC.Protos;
 
 namespace Sc.Trade.Services.gRPC.Commons.GlobalException
@@ -11,6 +12,17 @@ namespace Sc.Trade.Services.gRPC.Commons.GlobalException
             try
             {
                 return await base.UnaryServerHandler(request, context, continuation);
+            }
+            catch (ValidationExceptionCustom ex)
+            {
+                var serverResponse = new ServerResponse()
+                {
+                    IsSuccess = false,
+                    Message = "Validation error.",
+                    Errors = string.Join(" | ", ex.Errors)
+                };
+
+                return MapResponse<TRequest, TResponse>(serverResponse);
             }
             catch (Exception ex)
             {

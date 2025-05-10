@@ -1,4 +1,4 @@
-## 👨‍💻 Structure: Version 7 - feature/07-ApplicationUseCases-Logging-with-MediatR-PipeLineBehaviors
+## 👨‍💻 Structure: Version 8 - feature/08-FluentValidation
 
 ```
 Solution
@@ -14,7 +14,11 @@ Solution
 |	|   |	|--📄 MappingsProfile.cs
 |	|   |
 |	|   |-- 📁 Behaviors/
-|	|   	|--📄 LoggingBehavior.cs ✅
+|	|   |	|--📄 LoggingBehavior.cs
+|	|   |	|--📄 ValidationBehavior.cs ✅
+|	|   |
+|	|   |-- 📁 Exceptions/ ✅
+|	|   	|--📄 ValidationExceptionCustom.cs ✅
 |	|
 |       |-- 📁 Features/
 |	|   |-- 📁 Orders/
@@ -22,14 +26,17 @@ Solution
 |	|  	|   |-- 📁 CancelOrder/
 |	|  	|   |	|--📄 CancelOrderCommand.cs
 |	|  	|   |   |--📄 CancelOrderHandler.cs
+|	|  	|   |   |--📄 CancelOrderValidator.cs ✅
 |	|  	|   |
 |	|  	|   |-- 📁 CreateOrder/
 |	|  	|   |	|--📄 CreateOrderCommand.cs
 |	|  	|   |   |--📄 CreateOrderHandler.cs
+|	|  	|   |   |--📄 CreateOrderValidator.cs ✅
 |	|  	|   |
 |	|  	|   |-- 📁 UpdateOrder/
 |	|  	|	|--📄 UpdateOrderCommand.cs
 |	|  	|       |--📄 UpdateOrderHandler.cs
+|	|  	|   |   |--📄 UpdateOrderValidator.cs ✅
 |	|  	|
 |	|  	|-- 📁 Queries/
 |	|  	    |-- 📁 GetAllOrder/
@@ -41,6 +48,7 @@ Solution
 |	|  	    	|--📄 GetOrderHandler.cs
 |	|  	        |--📄 GetOrderQuery.cs
 |	|  	        |--📄 GetOrderResponseDto.cs
+|	|  	   	|--📄 GetOrderValidator.cs ✅
 |	|
 |       |-- 📄 DependencyInjection.cs 📝
 |
@@ -92,7 +100,7 @@ Solution
 	|   |	|--📄 MappingsProfile.cs
 	|   |
     	|   |-- 📁 GlobalException/
-	|	|--📄 GlobalExceptionHandler.cs
+	|	|--📄 GlobalExceptionHandler.cs 📝
 	|
        	|-- 📁 Protos/
     	|   |-- 📄 Order.proto
@@ -126,6 +134,8 @@ Solution
 
 	 📦 Dependencies:
 	    AutoMapper (13.0.1)
+	    FluentValidation (12.0.0) ✅
+	    FluentValidation.DependencyInjectionExtensions (12.0.0) ✅
 	    MediatR (12.5.0)
  
 📁 Domain  

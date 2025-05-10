@@ -1,4 +1,4 @@
-## 👨‍💻 Structure: Version 10 - feature/10-UpdatingDependencies
+## 👨‍💻 Structure: Version 11 - feature/11-UpgradeNet9
 
 ```
 Solution
@@ -134,7 +134,7 @@ Solution
 	    Application.Interfaces.csproj
 
 	 📦 Dependencies:
-	    AutoMapper (14.0.0) 📝
+	    AutoMapper (14.0.0)
 	    FluentValidation (12.0.0)
 	    FluentValidation.DependencyInjectionExtensions (12.0.0)
 	    MediatR (12.5.0)
@@ -168,7 +168,7 @@ Solution
 	    Persistence.csproj
 
 	 📦 Dependencies:
-	    Grpc.AspNetCore (2.71.0) 📝
+	    Grpc.AspNetCore (2.71.0)
 	    Microsoft.EntityFrameworkCore.Design (8.0.15)
 	    Grpc.AspNetCore.Server.Reflection (2.71.0)
 

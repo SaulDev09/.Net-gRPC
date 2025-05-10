@@ -1,4 +1,4 @@
-## 👨‍💻 Structure: Version 6 - feature/06-Presentation-with-interceptor
+## 👨‍💻 Structure: Version 7 - feature/07-ApplicationUseCases-Logging-with-MediatR-PipeLineBehaviors
 
 ```
 Solution
@@ -11,33 +11,38 @@ Solution
 |   |-- 🛠️ UseCases
 |       |-- 📁 Commons/
 |	|   |-- 📁 Mappings/
-|	|   	|--📄 MappingsProfile.cs
+|	|   |	|--📄 MappingsProfile.cs
+|	|   |
+|	|   |-- 📁 Behaviors/
+|	|   	|--📄 LoggingBehavior.cs ✅
 |	|
 |       |-- 📁 Features/
-|	   |-- 📁 Orders/
-|	   	|-- 📁 Commands/
-|	   	|   |-- 📁 CancelOrder/
-|	   	|   |	|--📄 CancelOrderCommand.cs
-|	   	|   |   |--📄 CancelOrderHandler.cs
-|	   	|   |
-|	   	|   |-- 📁 CreateOrder/
-|	   	|   |	|--📄 CreateOrderCommand.cs
-|	   	|   |   |--📄 CreateOrderHandler.cs
-|	   	|   |
-|	   	|   |-- 📁 UpdateOrder/
-|	   	|	|--📄 UpdateOrderCommand.cs
-|	   	|       |--📄 UpdateOrderHandler.cs
-|	   	|
-|	   	|-- 📁 Queries/
-|	   	    |-- 📁 GetAllOrder/
-|	   	    |	|--📄 GetAllOrderHandler.cs
-|	   	    |   |--📄 GetAllOrderQuery.cs
-|	   	    |   |--📄 GetAllOrderResponseDto.cs
-|	   	    |
-|	   	    |-- 📁 GetOrder/
-|	   	    	|--📄 GetOrderHandler.cs
-|	   	        |--📄 GetOrderQuery.cs
-|	   	        |--📄 GetOrderResponseDto.cs
+|	|   |-- 📁 Orders/
+|	|   	|-- 📁 Commands/
+|	|  	|   |-- 📁 CancelOrder/
+|	|  	|   |	|--📄 CancelOrderCommand.cs
+|	|  	|   |   |--📄 CancelOrderHandler.cs
+|	|  	|   |
+|	|  	|   |-- 📁 CreateOrder/
+|	|  	|   |	|--📄 CreateOrderCommand.cs
+|	|  	|   |   |--📄 CreateOrderHandler.cs
+|	|  	|   |
+|	|  	|   |-- 📁 UpdateOrder/
+|	|  	|	|--📄 UpdateOrderCommand.cs
+|	|  	|       |--📄 UpdateOrderHandler.cs
+|	|  	|
+|	|  	|-- 📁 Queries/
+|	|  	    |-- 📁 GetAllOrder/
+|	|  	    |	|--📄 GetAllOrderHandler.cs
+|	|  	    |   |--📄 GetAllOrderQuery.cs
+|	|  	    |   |--📄 GetAllOrderResponseDto.cs
+|	|  	    |
+|	|  	    |-- 📁 GetOrder/
+|	|  	    	|--📄 GetOrderHandler.cs
+|	|  	        |--📄 GetOrderQuery.cs
+|	|  	        |--📄 GetOrderResponseDto.cs
+|	|
+|       |-- 📄 DependencyInjection.cs 📝
 |
 |-- 📁 Domain/
 |   |-- 🛠️ Domain
@@ -84,10 +89,10 @@ Solution
     |-- 🌐 Services.gRPC
 	|-- 📁 Commons/
     	|   |-- 📁 Mappings/
-	|	|--📄 MappingsProfile.cs
-	|
-    	|   |-- 📁 GlobalException/ ✅
-	|	|--📄 GlobalExceptionHandler.cs ✅
+	|   |	|--📄 MappingsProfile.cs
+	|   |
+    	|   |-- 📁 GlobalException/
+	|	|--📄 GlobalExceptionHandler.cs
 	|
        	|-- 📁 Protos/
     	|   |-- 📄 Order.proto
@@ -97,7 +102,7 @@ Solution
 	|
         |--📄 appsettings.json
         |--📄 Program.cs
-       	|--📄 DependencyInjection.cs 📝
+       	|--📄 DependencyInjection.cs
     
 ```
 
@@ -248,7 +253,7 @@ json
 }
 ```
 
-**4. CancelOrder**  
+**5. CancelOrder**  
 Service: `Order`  
 Method: `CancelOrder`
 

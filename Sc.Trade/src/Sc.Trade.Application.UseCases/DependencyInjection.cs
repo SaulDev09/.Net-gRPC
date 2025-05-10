@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using Sc.Trade.Application.UseCases.Commons.Behaviors;
 using System.Reflection;
 
 namespace Sc.Trade.Application.UseCases
@@ -8,9 +10,10 @@ namespace Sc.Trade.Application.UseCases
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddMediatR(x =>
+            services.AddMediatR(cfg =>
             {
-                x.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             });
             return services;
         }

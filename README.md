@@ -115,6 +115,17 @@ Solution
     
 ```
 
+![Net-gRPC-Page-2](https://github.com/user-attachments/assets/50b5bd9e-b807-4ff2-a3ea-64a72e4558f3)
+
+## 🎥 Demo in Video
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=sA3shrkjCDo" target="_blank">
+    <img src="https://img.youtube.com/vi/sA3shrkjCDo/0.jpg" alt="Demo Video" width="480"/>
+  </a>
+</p>
+
+
 ## Projects:
 
 📁 Application:  

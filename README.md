@@ -119,6 +119,15 @@ Solution
 
 ## 🎥 Setup and Demo in Video
 
+1. Docker - DB
+2. Clone project
+3. Use Branch feature/10-UpdatingDependencies
+4. appsettings, update credentials
+5. Delete Migrated files
+6. Build Solution
+7. EF Commands
+8. Postman
+   
 <p align="center">
   <a href="https://www.youtube.com/watch?v=0TP3txLei8U" target="_blank">
     <img src="https://img.youtube.com/vi/0TP3txLei8U/0.jpg" alt="Demo Video" width="680"/>

@@ -115,13 +115,13 @@ Solution
     
 ```
 
-![Net-gRPC-Page-2](https://github.com/user-attachments/assets/50b5bd9e-b807-4ff2-a3ea-64a72e4558f3)
+![Net-gRPC](https://github.com/user-attachments/assets/b30acfc6-d72c-42e6-836a-27ba9a02d493)
 
-## 🎥 Demo in Video
+## 🎥 Setup and Demo in Video
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=sA3shrkjCDo" target="_blank">
-    <img src="https://img.youtube.com/vi/sA3shrkjCDo/0.jpg" alt="Demo Video" width="480"/>
+  <a href="https://www.youtube.com/watch?v=0TP3txLei8U" target="_blank">
+    <img src="https://img.youtube.com/vi/0TP3txLei8U/0.jpg" alt="Demo Video" width="680"/>
   </a>
 </p>
 
